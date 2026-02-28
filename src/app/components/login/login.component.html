@@ -1,0 +1,39 @@
+<div class="container">
+  <div class="card">
+
+    <!-- LEFT SIDE -->
+    <div class="left">
+      <h2>Welcome Back 👋</h2>
+      <p>Get access to your personal hub for clarity and productivity</p>
+    </div>
+
+    <!-- RIGHT SIDE -->
+    <div class="right">
+      <h1>Login</h1>
+
+      <form>
+        <input 
+          type="email" 
+          placeholder="Email" 
+          [(ngModel)]="email"
+          name="email"
+        />
+
+        <input 
+          type="password" 
+          placeholder="Password"
+          [(ngModel)]="password"
+          name="password"
+        />
+
+        <button type="submit">Login</button>
+      </form>
+
+      <div class="links">
+       <a routerLink="/signup">Create Account</a>
+<a routerLink="/forgot-password">Forgot Password?</a>
+      </div>
+    </div>
+
+  </div>
+</div>

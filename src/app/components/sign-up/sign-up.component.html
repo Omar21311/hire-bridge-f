@@ -1,0 +1,71 @@
+<div class="container">
+  <div class="card">
+
+    <!-- LEFT -->
+    <div class="left">
+      <h2>Join Us 🚀</h2>
+      <p>Create your account and start your journey</p>
+    </div>
+
+    <!-- RIGHT -->
+    <div class="right">
+      <h1>Sign Up</h1>
+
+      <form #signupForm="ngForm" (ngSubmit)="onSubmit(signupForm)">
+
+        <input
+          type="text"
+          name="name"
+          placeholder="Full Name"
+          [(ngModel)]="name"
+          required
+          #nameRef="ngModel"
+        />
+
+        <input
+          type="email"
+          name="email"
+          placeholder="Email"
+          [(ngModel)]="email"
+          required
+          email
+          #emailRef="ngModel"
+        />
+
+        <input
+          type="password"
+          name="password"
+          placeholder="Password"
+          [(ngModel)]="password"
+          required
+          minlength="6"
+          #passRef="ngModel"
+        />
+
+        <input
+          type="password"
+          name="confirmPassword"
+          placeholder="Confirm Password"
+          [(ngModel)]="confirmPassword"
+          required
+        />
+
+        <!-- Error Message -->
+        <div class="error" *ngIf="passwordsMismatch">
+          Passwords do not match ❌
+        </div>
+
+        <button
+          type="submit"
+          [disabled]="signupForm.invalid || passwordsMismatch">
+          Create Account
+        </button>
+      </form>
+
+      <div class="links">
+        <a routerLink="/login">Already have an account?</a>
+      </div>
+
+    </div>
+  </div>
+</div>
